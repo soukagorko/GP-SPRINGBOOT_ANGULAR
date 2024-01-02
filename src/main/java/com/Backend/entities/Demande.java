@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Getter @Setter
@@ -15,7 +16,7 @@ import java.util.Date;
 @Entity
 @Table(name="demandes")
 //public class Demande extends TypePermission{
-public class Demande {
+public class Demande implements Serializable {
     //
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
