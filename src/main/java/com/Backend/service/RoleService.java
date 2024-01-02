@@ -34,8 +34,8 @@ public class RoleService {
         Optional<Role> optionalRole = roleRepository.findById(id);
         if(optionalRole.isPresent()){
             Role existingRole = optionalRole.get();
-            existingRole.setNomrole(role.getNomrole());
-            existingRole.setDescrole(role.getDescrole());
+            existingRole.setNomRole(role.getNomRole());
+            existingRole.setDescRole(role.getDescRole());
             return roleRepository.save(existingRole);
         }
         return null;

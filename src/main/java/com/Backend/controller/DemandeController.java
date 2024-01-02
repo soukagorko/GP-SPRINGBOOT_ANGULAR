@@ -18,32 +18,36 @@ public class DemandeController {
     private final DemandeService demandeService;
 
     @PostMapping("/save")
-    public Demande createDemande(@RequestBody Demande demande){
+    public Demande createDemande(@RequestBody Demande demande) {
         return demandeService.addDemande(demande);
     }
+
     //
     @GetMapping("")
-    public List<Demande> readAllDemandes(){
+    public List<Demande> readAllDemandes() {
         return demandeService.getAllDemandes();
     }
+
     //
     @DeleteMapping("/delete/{id}")
-    public void supprimerDemande(@PathVariable Long id){
+    public void supprimerDemande(@PathVariable Long id) {
         demandeService.deleteDemande(id);
     }
+
     //
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Demande> getDemandeById(@PathVariable Long id){
+    public ResponseEntity<Demande> getDemandeById(@PathVariable Long id) {
         Demande demande = demandeService.getDemandeById(id);
-        if(demande==null)
+        if (demande == null)
             return ResponseEntity.notFound().build();
         return ResponseEntity.ok(demande);
     }
+
     //
     @PutMapping("/update/{id}")
-    public ResponseEntity<Demande> getDemandeById(@PathVariable Long id, @RequestBody Demande demande){
+    public ResponseEntity<Demande> getDemandeById(@PathVariable Long id, @RequestBody Demande demande) {
         Demande updateDemande = demandeService.updateDemande(id, demande);
-        if(updateDemande==null)
+        if (updateDemande == null)
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         return ResponseEntity.ok(updateDemande);
     }

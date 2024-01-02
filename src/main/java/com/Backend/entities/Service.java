@@ -20,29 +20,27 @@ public class Service {
     @Id
     @Column(name = "id_service")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idservice;
+    private Long idService;
 
     @Column(name = "nom_service", length = 50, nullable=false)
-    private String nomservice;
+    private String nomService;
 
     @Column(name = "sigle_service", length = 20, nullable=true)
-    private String sigleservice;
+    private String sigleService;
 
     @Column(name = "desc_service", length = 100, nullable=true)
-    private String descservice;
+    private String descService;
 
     @Column(name = "contact_service", length = 30, nullable=true)
-    private String contactservice;
+    private String contactService;
 
     @Column(name = "service_parent_id", length = 30, nullable=true)
-    private String serviceparentid;
+    private String serviceParentId;
 
     @OneToMany(mappedBy = "service", cascade = CascadeType.ALL)
     private List<User> users;
 
     @OneToMany(mappedBy = "service", cascade = CascadeType.ALL)
     private List<Personnel>  personnels;
-//    @OneToMany(mappedBy = "customer") // un client avec +sieurs compte. dans la class BankAccount, il y'a un attribut qui sappelle customer
-//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)// Permet d'ignorer la liste de compte lors de l'affichage de des clients
-//    private List<BankAccount> bankAccounts;
+
 }

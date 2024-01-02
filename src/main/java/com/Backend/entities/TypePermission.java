@@ -17,10 +17,7 @@ public class TypePermission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_type_permission")
-    private Long idtypepermission;
+    private Long idTypePermission;
     @Column(name = "nom_type_permission", length = 50, nullable = false)
-    private String nomtypepermission;
-
-//    @Column(name = "duree_type_permission", length = 100, nullable = true)
-//    private String dureetypepermission;
+    private String nomTypePermission;
 }
