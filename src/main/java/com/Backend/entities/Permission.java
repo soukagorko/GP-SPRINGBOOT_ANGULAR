@@ -2,14 +2,13 @@ package com.Backend.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
+@Data
 @Table(name="permissions")
 //public class Permission extends TypePermission{
 public class Permission {
@@ -17,11 +16,11 @@ public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_permission")
-    private Long idpermission;
+    private Long idPermission;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date date_permission;
+    private Date datePermission;
 
     //
     @ManyToOne(optional = false)

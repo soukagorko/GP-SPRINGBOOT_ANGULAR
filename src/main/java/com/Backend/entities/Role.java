@@ -22,12 +22,12 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_role")
-    private Long idrole;
+    private Long idRole;
     @Column(name = "nom_role", length = 50, nullable = false)
-    private String nomrole;
+    private String nomRole;
 
     @Column(name = "desc_role", length = 100, nullable = true)
-    private String descrole;
+    private String descRole;
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
     private List<User> users;

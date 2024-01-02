@@ -34,10 +34,10 @@ public class ServiceService {
         Optional<Service> optionalService = serviceRepository.findById(id);
         if(optionalService.isPresent()){
             Service existingService = optionalService.get();
-            existingService.setNomservice(service.getNomservice());
-            existingService.setSigleservice(service.getSigleservice());
-            existingService.setDescservice(service.getDescservice());
-            existingService.setContactservice(service.getContactservice());
+            existingService.setNomService(service.getNomService());
+            existingService.setSigleService(service.getSigleService());
+            existingService.setDescService(service.getDescService());
+            existingService.setContactService(service.getContactService());
             return serviceRepository.save(existingService);
         }
         return null;
