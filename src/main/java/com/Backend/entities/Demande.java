@@ -16,14 +16,14 @@ import java.util.Date;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Demande implements Serializable {
-    //
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_permission")
     private Long idPermission;
 
     @Column(name = "type_permission", length = 50, nullable = false)
-    private String tyPepermission;
+    private String typePermission;
 
     @Column(name = "duree_permission", nullable = false)
     private String dureePermission;
