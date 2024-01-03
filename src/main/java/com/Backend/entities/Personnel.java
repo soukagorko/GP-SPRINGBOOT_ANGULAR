@@ -1,12 +1,17 @@
 package com.Backend.entities;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
+@Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name="personnels")
 public class Personnel {
     //

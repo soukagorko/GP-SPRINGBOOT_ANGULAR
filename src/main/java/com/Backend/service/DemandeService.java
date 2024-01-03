@@ -34,7 +34,7 @@ public class DemandeService {
         Optional<Demande> optionalDemande = demandeRepository.findById(id);
         if (optionalDemande.isPresent()) {
             Demande existingDemande = optionalDemande.get();
-            existingDemande.setTyPepermission(demande.getTyPepermission());
+            existingDemande.setTypePermission(demande.getTypePermission());
             existingDemande.setDureePermission(demande.getDureePermission());
             existingDemande.setDateDemande(demande.getDateDemande());
             existingDemande.setDateDebut(demande.getDateDebut());
