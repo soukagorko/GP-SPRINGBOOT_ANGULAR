@@ -1,17 +1,20 @@
 package com.Backend.entities;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
 
+@Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name="type_permissions")
-@Inheritance(strategy=InheritanceType.JOINED)
-//public abstract class TypePermission implements Serializable {
 public class TypePermission {
     //
     @Id

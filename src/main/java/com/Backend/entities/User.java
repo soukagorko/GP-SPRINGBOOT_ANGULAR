@@ -1,9 +1,11 @@
 package com.Backend.entities;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
@@ -11,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "users")
 public class User {
     //

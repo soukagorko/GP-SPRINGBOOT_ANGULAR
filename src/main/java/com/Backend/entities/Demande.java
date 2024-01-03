@@ -3,14 +3,18 @@ package com.Backend.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
 
-@Data
+@Entity
 @Table(name="demandes")
-//public class Demande extends TypePermission{
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Demande implements Serializable {
     //
     @Id
