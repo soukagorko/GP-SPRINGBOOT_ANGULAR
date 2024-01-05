@@ -1,7 +1,7 @@
-package com.Backend.service;
+package com.backend.service;
 
-import com.Backend.entities.User;
-import com.Backend.repositories.UserRepository;
+import com.backend.entities.User;
+import com.backend.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package com.Backend.service;
+package com.backend.service;
 
-import com.Backend.entities.Role;
-import com.Backend.repositories.RoleRepository;
+import com.backend.entities.Role;
+import com.backend.repositories.RoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

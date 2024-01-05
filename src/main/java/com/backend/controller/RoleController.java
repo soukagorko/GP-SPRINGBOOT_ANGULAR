@@ -1,7 +1,7 @@
-package com.Backend.controller;
+package com.backend.controller;
 
-import com.Backend.entities.Role;
-import com.Backend.service.RoleService;
+import com.backend.entities.Role;
+import com.backend.service.RoleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

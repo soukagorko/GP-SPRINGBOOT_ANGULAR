@@ -1,6 +1,6 @@
-package com.Backend.repositories;
+package com.backend.repositories;
 
-import com.Backend.entities.Role;
+import com.backend.entities.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository

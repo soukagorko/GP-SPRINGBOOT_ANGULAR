@@ -1,4 +1,4 @@
-package com.Backend.entities;
+package com.backend.entities;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
