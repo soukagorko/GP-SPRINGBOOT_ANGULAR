@@ -2,54 +2,47 @@ package com.Backend.controller;
 
 import com.Backend.entities.Demande;
 import com.Backend.service.DemandeService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/demandes")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @CrossOrigin("*")
 public class DemandeController {
     //
-    private final DemandeService demandeService;
+    final DemandeService demandeService;
 
+    public DemandeController(DemandeService demandeService) {
+        this.demandeService = demandeService;
+    }
+    //
     @PostMapping("/save")
-    public Demande createDemande(@RequestBody Demande demande) {
-        return demandeService.addDemande(demande);
+    void saveDemade(@RequestBody Demande demande) {
+        Demande dataInput =  new Demande();
+        dataInput.setTypePermission(demande.getTypePermission());
+        dataInput.setDureePermission(demande.getDureePermission());
+        dataInput.setDateDemande(demande.getDateDemande());
+        dataInput.setDateDebut(demande.getDateDebut());
+        dataInput.setDateFin(demande.getDateFin());
+        dataInput.setLibelle(demande.getLibelle());
+        this.demandeService.createDemande(demande);
     }
 
-    //
     @GetMapping("")
-    public List<Demande> readAllDemandes() {
-        return demandeService.getAllDemandes();
+    List<Demande> listAllDemandes() {
+        return this.demandeService.getAllDemandes();
     }
 
-    //
-    @DeleteMapping("/delete/{id}")
-    public void supprimerDemande(@PathVariable Long id) {
-        demandeService.deleteDemande(id);
-    }
-
-    //
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Demande> getDemandeById(@PathVariable Long id) {
-        Demande demande = demandeService.getDemandeById(id);
-        if (demande == null)
-            return ResponseEntity.notFound().build();
-        return ResponseEntity.ok(demande);
+    Demande findOneDemandeById(@PathVariable("id") long id) {
+        return this.demandeService.getOneDemande(id);
     }
 
-    //
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Demande> getDemandeById(@PathVariable Long id, @RequestBody Demande demande) {
-        Demande updateDemande = demandeService.updateDemande(id, demande);
-        if (updateDemande == null)
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        return ResponseEntity.ok(updateDemande);
+    @DeleteMapping("/delete/{id}")
+    void deleteDemande(@PathVariable("id") long id) {
+        this.demandeService.deleteDemande(id);
     }
-    //
 }
