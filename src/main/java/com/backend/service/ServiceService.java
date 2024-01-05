@@ -1,8 +1,8 @@
-package com.Backend.service;
+package com.backend.service;
 
 //import com.Backend.entities.Service;
-import com.Backend.entities.Service;
-import com.Backend.repositories.ServiceRepository;
+import com.backend.entities.Service;
+import com.backend.repositories.ServiceRepository;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;

@@ -1,8 +1,8 @@
-package com.Backend.controller;
+package com.backend.controller;
 
 
-import com.Backend.entities.Service;
-import com.Backend.service.ServiceService;
+import com.backend.entities.Service;
+import com.backend.service.ServiceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,8 +1,11 @@
-package com.Backend.entities;
+package com.backend.entities;
 
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -10,7 +13,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name="demandes")
+@Table(name = "demandes")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
